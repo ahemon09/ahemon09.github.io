@@ -1,77 +1,339 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Xbomber is the pioneer of sms and call bombers in Bangladesh. For a long time, this was a closed source project. But we (Team X 1337) have decided to make it open source so that everyone can gain knowledge from this project and create their own project from this github template.">
-  <title>XBOMBER | Community Edition</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A H Emon — Content Creator & Web Developer</title>
+<meta name="description" content="Portfolio of A H Emon — animated comedy creator behind American Comedy Toons and web developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070f; --bg2:#0c0c18;
+    --cyan:#22d3ee; --magenta:#f0f; --purple:#a855f7; --amber:#fbbf24;
+    --text:#eef2ff; --muted:#9aa3b2;
+    --card:rgba(255,255,255,.045); --border:rgba(255,255,255,.09);
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;line-height:1.6}
+  h1,h2,h3,.grotesk{font-family:'Space Grotesk',sans-serif}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--cyan);color:#000}
+
+  /* ---------- nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+    padding:1rem 5vw;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    background:rgba(7,7,15,.55);border-bottom:1px solid var(--border)}
+  .logo{font-family:'Space Grotesk';font-weight:700;font-size:1.25rem;letter-spacing:.5px}
+  .logo span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navlinks{display:flex;gap:1.6rem;font-size:.92rem;color:var(--muted)}
+  .navlinks a{transition:color .2s}
+  .navlinks a:hover{color:var(--cyan)}
+  @media(max-width:640px){.navlinks{display:none}}
+
+  /* ---------- hero ---------- */
+  #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  #bg3d{position:absolute;inset:0;z-index:0}
+  #bg3d canvas{display:block}
+  .hero-inner{position:relative;z-index:2;max-width:900px;padding:0 6vw}
+  .badge{display:inline-block;padding:.4rem 1.1rem;border:1px solid var(--border);border-radius:999px;
+    font-size:.8rem;color:var(--muted);background:rgba(255,255,255,.04);margin-bottom:1.4rem;letter-spacing:.12em;text-transform:uppercase}
+  .badge .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#34d399;margin-right:.55rem;box-shadow:0 0 10px #34d399}
+  .hero-inner h1{font-size:clamp(2.8rem,8vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+  .grad{background:linear-gradient(92deg,var(--cyan) 10%,var(--purple) 55%,var(--magenta) 95%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-sub{margin-top:1.2rem;font-size:clamp(1rem,2.4vw,1.3rem);color:var(--muted);max-width:620px;margin-left:auto;margin-right:auto}
+  .hero-cta{margin-top:2.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn{padding:.85rem 1.9rem;border-radius:999px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:linear-gradient(92deg,var(--cyan),var(--purple));color:#04121a}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35)}
+  .btn-ghost{border-color:var(--border);color:var(--text);background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:var(--muted);
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+
+  /* ---------- sections ---------- */
+  section{position:relative;z-index:1;padding:6.5rem 5vw;max-width:1200px;margin:0 auto}
+  .kicker{color:var(--cyan);font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:.8rem}
+  h2.sec-title{font-size:clamp(1.9rem,4.5vw,2.9rem);margin-bottom:1rem;letter-spacing:-.01em}
+  .sec-sub{color:var(--muted);max-width:640px;margin-bottom:3rem}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.2rem;margin-top:2.8rem}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1rem;text-align:center}
+  .stat b{font-family:'Space Grotesk';font-size:2rem;display:block;background:linear-gradient(92deg,var(--cyan),var(--purple));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{color:var(--muted);font-size:.85rem}
+
+  /* skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+  .skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:transform .25s,border-color .25s}
+  .skill-card:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.45)}
+  .skill-card h3{margin-bottom:1.1rem;font-size:1.15rem}
+  .skill-card h3 .ico{margin-right:.6rem}
+  .tags{display:flex;flex-wrap:wrap;gap:.55rem}
+  .tag{font-size:.82rem;padding:.38rem .9rem;border-radius:999px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);color:#bfe9f5}
+
+  /* projects */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem}
+  .proj{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .25s,border-color .25s;display:flex;flex-direction:column}
+  .proj:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.5)}
+  .proj-banner{height:150px;display:flex;align-items:center;justify-content:center;font-size:3rem;
+    background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(168,85,247,.16))}
+  .proj-body{padding:1.8rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+  .proj-body h3{font-size:1.25rem}
+  .proj-body p{color:var(--muted);font-size:.93rem;flex:1}
+  .proj-meta{display:flex;gap:.5rem;flex-wrap:wrap;font-size:.76rem;color:var(--cyan)}
+  .proj-link{align-self:flex-start;font-weight:600;font-size:.9rem;color:var(--cyan);border-bottom:1px solid transparent}
+  .proj-link:hover{border-color:var(--cyan)}
+
+  /* contact */
+  #contact{text-align:center}
+  #contact .sec-sub{margin-left:auto;margin-right:auto}
+  .socials{display:flex;gap:1rem;justify-content:center;margin-top:2.2rem;flex-wrap:wrap}
+  .soc{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.7rem;border-radius:999px;border:1px solid var(--border);
+    background:var(--card);font-weight:500;transition:transform .2s,border-color .2s}
+  .soc:hover{transform:translateY(-3px);border-color:var(--cyan)}
+
+  footer{border-top:1px solid var(--border);padding:2rem 5vw;text-align:center;color:var(--muted);font-size:.85rem;position:relative;z-index:1}
+</style>
 </head>
-
 <body>
-  <section class="container-fluid">
-    <section class="row justify-content-center">
-      <section class="col-12 col-sm-6 col-md-4">
-        <div class="form form-container">
-          <div class="form-group">
-            <h1 class="text-center font-weight-bold header">
-              <i class="bi bi-emoji-heart-eyes"></i> XBOMBER <i class="bi bi-emoji-heart-eyes-fill"></i>
-            </h1>
-            <p class="credit text-muted"><small>FROM</small> <span class="fw-bold">TEAM X 1337</span></p>
-            <p class="notice">
-              <i class="bi bi-x"></i> 
-              DEVELOPERS WON'T TAKE RESPONSIBLITY OF ANY MISUSE.
-              <i class="bi bi-x"></i>
-            </p>
-          </div>
-          <br>
-          <form>
-            <div class="mb-3">
-              <label for="mobile" class="form-label"><text style="color:white !important"><i
-                    class="bi bi-person-circle"></i> TARGET NUMBER</text> </label>
-              <input type="number" class="form-control" id="mobile">
-            </div>
-            <div class="mb-3">
-              <label for="amount" class="form-label"><text style="color:white !important"><i
-                    class="bi bi-speedometer2"></i> AMOUNT</text></label>
-              <input type="number" class="form-control" id="amount">
-            </div>
-            <div class="d-flex justify-content-center">
-              <div class="alert alert-info visually-hidden fw-bold" role="alert" id="logs">
 
-              </div>
-            </div>
-            <br>
-            <div align="center">
-              <button id="send" type="submit" class="btn btn-outline-light"><i class="bi bi-lightning-charge"></i>
-                <b>SUBMIT</b> </button>
-            </div>
-          </form>
-          <hr>
-          <div class="footer-copyright text-center py-3" align="center">
-            <small class="text-muted" style="color: white !important">MADE WITH <i class="bi bi-heart"
-                style="color:red !important"></i> BY <b>SowmikSudo</b></small>
-            <br><br>
-            <button class="btn btn-outline-primary"
-              onclick="document.location='https://t.me/ign0r3dh4x0r'">
-              <i class="bi bi-tree"></i>
-              LINKTREE
-            </button>
-            <span style="color: white;"> | </span>
-            <button class="btn btn-outline-primary" onclick="document.location='https://github.com/sowmiksudo'">
-              <i class="bi bi-github"></i>
-              GITHUB
-            </button>
-            <br>
-          </div>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="assets/script.js"></script>
-          <script src="https://ezstat.ru/1F2zr7.js"></script>
+<nav>
+  <a class="logo" href="#hero">A<span>.</span>H<span>.</span>EMON</a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header id="hero">
+  <div id="bg3d"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="dot"></span>Open to collaborations</div>
+    <h1>Hi, I'm <span class="grad">A H Emon</span></h1>
+    <p class="hero-sub">Content creator &amp; web developer — I run an animated comedy YouTube channel with a daily AI-powered cartoon pipeline, and I build fast, playful experiences for the web.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">See my work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<section id="about">
+  <div class="reveal">
+    <div class="kicker">About</div>
+    <h2 class="sec-title">Creator by day, <span class="grad">builder</span> by night</h2>
+    <p class="sec-sub">I'm A H Emon (A). I create animated comedy cartoons for YouTube — writing, directing and publishing daily Shorts — and I ship web projects with the same energy: fast, experimental, and made to be watched.</p>
+    <div class="stats">
+      <div class="stat"><b>11+</b><span>Animated Shorts published</span></div>
+      <div class="stat"><b>2.3K</b><span>Views on top viral Short</span></div>
+      <div class="stat"><b>Daily</b><span>Upload pipeline</span></div>
+      <div class="stat"><b>∞</b><span>Ideas in the backlog</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="reveal">
+    <div class="kicker">Skills</div>
+    <h2 class="sec-title">Two crafts, one <span class="grad">workflow</span></h2>
+    <p class="sec-sub">From storyboard to deploy — everything I need to take an idea from a sketch to something people can watch or click.</p>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3><span class="ico">🎬</span>Content Creation</h3>
+        <div class="tags">
+          <span class="tag">AI Video Generation</span><span class="tag">Cartoon Direction</span>
+          <span class="tag">Comedy Writing</span><span class="tag">YouTube Growth</span>
+          <span class="tag">Thumbnail Design</span><span class="tag">Shorts Strategy</span>
         </div>
-</body>
+      </div>
+      <div class="skill-card">
+        <h3><span class="ico">💻</span>Web Development</h3>
+        <div class="tags">
+          <span class="tag">HTML5</span><span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span><span class="tag">Three.js</span>
+          <span class="tag">Responsive Design</span><span class="tag">Git &amp; GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="projects">
+  <div class="reveal">
+    <div class="kicker">Projects</div>
+    <h2 class="sec-title">What I've been <span class="grad">shipping</span></h2>
+    <p class="sec-sub">A mix of screen-time and build-time — cartoons people watch and code people can fork.</p>
+    <div class="proj-grid">
+      <div class="proj">
+        <div class="proj-banner">🦅</div>
+        <div class="proj-body">
+          <h3>American Comedy Toons</h3>
+          <p>Animated comedy YouTube channel publishing daily cartoon Shorts — mom-vs-kid chaos, tower stunts and goat heists. Viral hits include <em>Report Card vs Ninja Mom</em> (2.3K views).</p>
+          <div class="proj-meta"><span>YouTube</span><span>Animation</span><span>Comedy</span></div>
+          <a class="proj-link" href="https://www.youtube.com/@shortvideos888" target="_blank" rel="noopener">Watch the channel →</a>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-banner">⚙️</div>
+        <div class="proj-body">
+          <h3>Daily Shorts Pipeline</h3>
+          <p>An automated morning workflow: analyze channel performance, pick winning formats, generate 5–6 new cartoon Shorts with thumbnails, and upload them — every single day.</p>
+          <div class="proj-meta"><span>Automation</span><span>AI Video</span><span>YouTube API</span></div>
+          <a class="proj-link" href="https://github.com/ahemon09" target="_blank" rel="noopener">See the setup →</a>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-banner">🌐</div>
+        <div class="proj-body">
+          <h3>3D Web Experiments</h3>
+          <p>Playful Three.js scenes and single-file web builds — like this very portfolio. More experiments shipping soon; this space stays under construction on purpose.</p>
+          <div class="proj-meta"><span>Three.js</span><span>JavaScript</span><span>Creative Coding</span></div>
+          <a class="proj-link" href="https://github.com/ahemon09" target="_blank" rel="noopener">Browse on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="reveal">
+    <div class="kicker">Contact</div>
+    <h2 class="sec-title">Let's make something <span class="grad">fun</span></h2>
+    <p class="sec-sub">Collabs, commissions, or just to say hi — my inbox (and comment section) is open.</p>
+    <div class="socials">
+      <a class="soc" href="https://github.com/ahemon09" target="_blank" rel="noopener">🐙 GitHub</a>
+      <a class="soc" href="https://www.youtube.com/@shortvideos888" target="_blank" rel="noopener">▶️ YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 A H Emon — built with Three.js, caffeine &amp; questionable jokes.</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  const container = document.getElementById('bg3d');
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x07070f, 0.028);
+  const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 200);
+  camera.position.set(0, 0, 26);
+  const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // lights
+  scene.add(new THREE.AmbientLight(0x8899ff, 0.5));
+  const l1 = new THREE.PointLight(0x22d3ee, 1.4, 120); l1.position.set(-14, 8, 10); scene.add(l1);
+  const l2 = new THREE.PointLight(0xa855f7, 1.4, 120); l2.position.set(14, -6, 8); scene.add(l2);
+  const l3 = new THREE.PointLight(0xff00ff, 0.6, 100); l3.position.set(0, 10, -8); scene.add(l3);
+
+  // starfield particles
+  function makeStars(n, size, color){
+    const g = new THREE.BufferGeometry();
+    const p = new Float32Array(n*3);
+    for(let i=0;i<n;i++){
+      p[i*3]   = (Math.random()-0.5)*120;
+      p[i*3+1] = (Math.random()-0.5)*80;
+      p[i*3+2] = (Math.random()-0.5)*80 - 10;
+    }
+    g.setAttribute('position', new THREE.BufferAttribute(p,3));
+    const m = new THREE.PointsMaterial({color, size, transparent:true, opacity:0.85, sizeAttenuation:true});
+    return new THREE.Points(g,m);
+  }
+  const stars1 = makeStars(900, 0.16, 0x88ccff);
+  const stars2 = makeStars(500, 0.26, 0xff88ff);
+  scene.add(stars1, stars2);
+
+  // hero shapes
+  const shapes = new THREE.Group();
+  const knot = new THREE.Mesh(
+    new THREE.TorusKnotGeometry(4.2, 1.15, 160, 24),
+    new THREE.MeshStandardMaterial({color:0x22d3ee, wireframe:true, transparent:true, opacity:0.5})
+  );
+  shapes.add(knot);
+  const floaters = [];
+  const geoDefs = [
+    [new THREE.IcosahedronGeometry(1.1, 0), 0xa855f7],
+    [new THREE.OctahedronGeometry(1.2, 0), 0xff00ff],
+    [new THREE.TetrahedronGeometry(1.2, 0), 0xfbbf24],
+    [new THREE.TorusGeometry(0.9, 0.32, 12, 28), 0x22d3ee],
+    [new THREE.BoxGeometry(1.3, 1.3, 1.3), 0x34d399]
+  ];
+  geoDefs.forEach(([geo, col], i)=>{
+    const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+      color:col, wireframe:true, transparent:true, opacity:0.75}));
+    const ang = (i/geoDefs.length)*Math.PI*2;
+    mesh.position.set(Math.cos(ang)*13, Math.sin(ang)*7, -4 - i*1.5);
+    mesh.userData = {ang, r:13, h:7, sp:0.25 + Math.random()*0.3, ph:Math.random()*Math.PI*2};
+    floaters.push(mesh); shapes.add(mesh);
+  });
+  scene.add(shapes);
+
+  // mouse parallax
+  let mx=0, my=0, tmx=0, tmy=0;
+  addEventListener('pointermove', e=>{
+    tmx = (e.clientX/innerWidth - 0.5)*2;
+    tmy = (e.clientY/innerHeight - 0.5)*2;
+  });
+
+  // scroll fade for hero
+  let heroFade = 0;
+  addEventListener('scroll', ()=>{
+    heroFade = Math.min(scrollY/innerHeight, 1);
+  }, {passive:true});
+
+  addEventListener('resize', ()=>{
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+  const clock = new THREE.Clock();
+  (function tick(){
+    requestAnimationFrame(tick);
+    const t = clock.getElapsedTime();
+    mx += (tmx-mx)*0.04; my += (tmy-my)*0.04;
+
+    knot.rotation.x = t*0.12; knot.rotation.y = t*0.18;
+    knot.position.y = Math.sin(t*0.6)*0.8;
+
+    floaters.forEach(f=>{
+      const u = f.userData;
+      u.ang += 0.0016*u.sp*10*0.06;
+      f.position.x = Math.cos(u.ang)*u.r;
+      f.position.y = Math.sin(u.ang)*u.h + Math.sin(t*u.sp + u.ph)*1.2;
+      f.rotation.x += 0.004; f.rotation.y += 0.006;
+    });
+    shapes.rotation.y = mx*0.18;
+    shapes.rotation.x = -my*0.12;
+
+    stars1.rotation.y = t*0.008; stars2.rotation.y = -t*0.005;
+
+    camera.position.x += (mx*3 - camera.position.x)*0.05;
+    camera.position.y += (-my*2 - camera.position.y)*0.05;
+    camera.lookAt(0,0,0);
+
+    container.style.opacity = 1 - heroFade*0.85;
+    renderer.render(scene, camera);
+  })();
+})();
+
+// scroll reveal
+(function(){
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
 </html>
