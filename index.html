@@ -159,8 +159,9 @@
   .site-link .arr{transition:transform .25s}
   .site-link:hover .arr{transform:translateX(4px)}
   /* youtube */
+  .chan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem;margin-bottom:2rem}
   .chan{display:flex;align-items:center;gap:1.3rem;background:var(--card);border:1px solid var(--border);
-    border-radius:var(--radius);padding:1.6rem 1.8rem;margin-bottom:2rem;flex-wrap:wrap}
+    border-radius:var(--radius);padding:1.6rem 1.8rem;flex-wrap:wrap}
   .chan .avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;
     background:linear-gradient(135deg,#ff0000,#a855f7);flex-shrink:0}
   .chan .info{flex:1;min-width:200px}
@@ -362,13 +363,23 @@
     <div class="kicker"><span class="n">04</span>YouTube</div>
     <h2 class="sec-title">Watch right <span class="grad">here</span></h2>
     <p class="sec-sub">My other channel — lofi remixes and status videos. Hit play, no need to leave the site.</p>
-    <div class="chan">
-      <div class="avatar">▶️</div>
-      <div class="info">
-        <h3>A H Emon</h3>
-        <p>@A_H_Emon_09 · 39 subscribers · 23 videos</p>
+    <div class="chan-grid">
+      <div class="chan">
+        <div class="avatar">▶️</div>
+        <div class="info">
+          <h3>A H Emon</h3>
+          <p>@A_H_Emon_09 · 39 subscribers · 23 videos</p>
+        </div>
+        <a class="sub" href="https://www.youtube.com/@A_H_Emon_09?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
       </div>
-      <a class="sub" href="https://www.youtube.com/@A_H_Emon_09" target="_blank" rel="noopener">Subscribe</a>
+      <div class="chan">
+        <div class="avatar">🦅</div>
+        <div class="info">
+          <h3>American Comedy Toons</h3>
+          <p>@shortvideos888 · Animated comedy Shorts</p>
+        </div>
+        <a class="sub" href="https://www.youtube.com/@shortvideos888?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+      </div>
     </div>
     <div class="vid-grid">
       <div class="vid">
