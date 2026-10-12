@@ -145,6 +145,19 @@
   .proj-link{align-self:flex-start;font-weight:600;font-size:.92rem;color:var(--cyan);display:inline-flex;align-items:center;gap:.35rem}
   .proj-link .arr{transition:transform .25s}
   .proj-link:hover .arr{transform:translateX(5px)}
+  .sub-head{font-family:'Space Grotesk';font-size:1.35rem;margin:3.4rem 0 1.4rem;display:flex;align-items:center;gap:.9rem}
+  .sub-head::after{content:"";flex:1;height:1px;background:var(--border)}
+  .site-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem}
+  .site{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;
+    transition:transform .25s,border-color .25s;position:relative}
+  .site:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.45)}
+  .site .se{font-size:1.9rem}
+  .site h4{font-family:'Space Grotesk';font-size:1.05rem}
+  .site p{color:var(--muted);font-size:.85rem;font-weight:300;flex:1}
+  .site .url{font-family:var(--mono);font-size:.72rem;color:var(--faint);word-break:break-all}
+  .site-link{font-weight:600;font-size:.86rem;color:var(--cyan);display:inline-flex;align-items:center;gap:.35rem;align-self:flex-start}
+  .site-link .arr{transition:transform .25s}
+  .site-link:hover .arr{transform:translateX(4px)}
 
   /* contact */
   #contact{text-align:center}
@@ -277,6 +290,52 @@
           <div class="proj-meta"><span>Three.js</span><span>JavaScript</span><span>Creative Coding</span></div>
           <a class="proj-link" href="https://github.com/ahemon09" target="_blank" rel="noopener">Browse on GitHub <span class="arr">→</span></a>
         </div>
+      </div>
+    </div>
+
+    <h3 class="sub-head">🌐 Websites I've shipped</h3>
+    <div class="site-grid">
+      <div class="site">
+        <div class="se">🐼</div>
+        <h4>Cool Panda</h4>
+        <p>WinGo round tracker &amp; prediction companion with live trend charts and stats.</p>
+        <div class="url">pandatool.netlify.app</div>
+        <a class="site-link" href="https://pandatool.netlify.app" target="_blank" rel="noopener">Visit live <span class="arr">→</span></a>
+      </div>
+      <div class="site">
+        <div class="se">📺</div>
+        <h4>EMON TV</h4>
+        <p>Live TV &amp; IPTV streaming client with channel browser, favorites and themes.</p>
+        <div class="url">emoniptv.netlify.app</div>
+        <a class="site-link" href="https://emoniptv.netlify.app" target="_blank" rel="noopener">Visit live <span class="arr">→</span></a>
+      </div>
+      <div class="site">
+        <div class="se">🕹️</div>
+        <h4>Emon09 — Cyberpunk Portfolio</h4>
+        <p>Neon cyberpunk-styled personal portfolio with animated sections.</p>
+        <div class="url">emon09.netlify.app</div>
+        <a class="site-link" href="https://emon09.netlify.app" target="_blank" rel="noopener">Visit live <span class="arr">→</span></a>
+      </div>
+      <div class="site">
+        <div class="se">📲</div>
+        <h4>EMON SMS Bomber</h4>
+        <p>Bulk SMS sender tool with VIP mode and console-style interface.</p>
+        <div class="url">emon-sms-bomber.netlify.app</div>
+        <a class="site-link" href="https://emon-sms-bomber.netlify.app" target="_blank" rel="noopener">Visit live <span class="arr">→</span></a>
+      </div>
+      <div class="site">
+        <div class="se">👤</div>
+        <h4>AHE Portfolio</h4>
+        <p>Personal portfolio site with project gallery and career timeline.</p>
+        <div class="url">ahemon.netlify.app</div>
+        <a class="site-link" href="https://ahemon.netlify.app" target="_blank" rel="noopener">Visit live <span class="arr">→</span></a>
+      </div>
+      <div class="site">
+        <div class="se">📧</div>
+        <h4>Tempify Pro</h4>
+        <p>Smart disposable temporary email generator with fresh domains.</p>
+        <div class="url">emon-tempmail.netlify.app</div>
+        <a class="site-link" href="https://emon-tempmail.netlify.app" target="_blank" rel="noopener">Visit live <span class="arr">→</span></a>
       </div>
     </div>
   </div>
