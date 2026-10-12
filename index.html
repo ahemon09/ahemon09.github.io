@@ -158,6 +158,22 @@
   .site-link{font-weight:600;font-size:.86rem;color:var(--cyan);display:inline-flex;align-items:center;gap:.35rem;align-self:flex-start}
   .site-link .arr{transition:transform .25s}
   .site-link:hover .arr{transform:translateX(4px)}
+  /* youtube */
+  .chan{display:flex;align-items:center;gap:1.3rem;background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:1.6rem 1.8rem;margin-bottom:2rem;flex-wrap:wrap}
+  .chan .avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;
+    background:linear-gradient(135deg,#ff0000,#a855f7);flex-shrink:0}
+  .chan .info{flex:1;min-width:200px}
+  .chan .info h3{font-size:1.25rem}
+  .chan .info p{color:var(--muted);font-size:.88rem}
+  .chan .sub{background:#ff0000;color:#fff;padding:.7rem 1.6rem;border-radius:999px;font-weight:600;font-size:.9rem;transition:transform .2s}
+  .chan .sub:hover{transform:translateY(-2px)}
+  .vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+  .vid{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#000;transition:transform .25s,border-color .25s}
+  .vid:hover{transform:translateY(-5px);border-color:rgba(255,0,0,.5)}
+  .vid .frame{position:relative;padding-top:56.25%}
+  .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vid .cap{padding:.85rem 1.1rem;font-size:.86rem;color:var(--muted);background:var(--card);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   /* contact */
   #contact{text-align:center}
@@ -185,7 +201,7 @@
 <nav>
   <a class="logo" href="#hero">A<span class="g">.</span>H<span class="g">.</span>EMON</a>
   <div class="navlinks">
-    <a href="#about">about</a><a href="#skills">skills</a><a href="#projects">projects</a>
+    <a href="#about">about</a><a href="#skills">skills</a><a href="#projects">projects</a><a href="#videos">videos</a>
     <a href="#contact" class="nav-cta">contact</a>
   </div>
 </nav>
@@ -341,9 +357,51 @@
   </div>
 </section>
 
+<section id="videos">
+  <div class="reveal">
+    <div class="kicker"><span class="n">04</span>YouTube</div>
+    <h2 class="sec-title">Watch right <span class="grad">here</span></h2>
+    <p class="sec-sub">My other channel — lofi remixes and status videos. Hit play, no need to leave the site.</p>
+    <div class="chan">
+      <div class="avatar">▶️</div>
+      <div class="info">
+        <h3>A H Emon</h3>
+        <p>@A_H_Emon_09 · 39 subscribers · 23 videos</p>
+      </div>
+      <a class="sub" href="https://www.youtube.com/@A_H_Emon_09" target="_blank" rel="noopener">Subscribe</a>
+    </div>
+    <div class="vid-grid">
+      <div class="vid">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/G132BP7WJKk" title="agar tu hota hai to" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="cap">agar tu hota hai to</div>
+      </div>
+      <div class="vid">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/lduQiuZPXo4" title="tu hai Kahan status video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="cap">tu hai Kahan ✨ status video 🖤</div>
+      </div>
+      <div class="vid">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/IJH4mRk8JVE" title="#baby #foryou #viral" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="cap">#baby #foryou #viral</div>
+      </div>
+      <div class="vid">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/Ivq9AflGEGY" title="viral #foryou #baby" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="cap">viral 🍺 #foryou #baby</div>
+      </div>
+      <div class="vid">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/JkPwfj828Ps" title="Amar Dehokhan Lofi - Slowed and Reverb" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="cap">Amar Dehokhan Lofi - Slowed and Reverb</div>
+      </div>
+      <div class="vid">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/aU-J55G9JoM" title="Shei Tumi ke - Lofi Remix" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="cap">Shei Tumi ke - Lofi Remix (slowed + reverb)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="reveal">
-    <div class="kicker"><span class="n">04</span>Contact</div>
+    <div class="kicker"><span class="n">05</span>Contact</div>
     <h2 class="sec-title">Let's make something <span class="grad">fun</span></h2>
     <p class="sec-sub">Collabs, commissions, or just to say hi — find me anywhere below.</p>
     <div class="link-grid">
